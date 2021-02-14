@@ -4,7 +4,7 @@ import '../cssFile/AdminPage.css'
 import NavBar from "./NavBar";
 
 // hay mn no3 class component
-export default class AdminPage extends Component {
+class AdminPage extends Component {
   // constructor hwi ali mkbel props
   constructor(props) {
     //super bwde al props ll component aw lsho he yorsht
@@ -131,3 +131,4 @@ this.setState({ messege:"SomeThing Empty Make Sure Please !"})
   }
 }
 //لانو اذا محطناش اروه فنكشن بشغلهن لما يبنيهن بدون ما تعص
+export default withRouter(AdminPage) 

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "./NavBar";
 import '../cssFile/EditProfile.css';
+import { withRouter } from "react-router-dom";
 
-export default function EditProfile(props) {
+ function EditProfile(props) {
 
   const [HideShowEmail, setHideShowEmail] = useState(false);
   const [HideShowPassoword, setHideShowPassoword] = useState(false);
@@ -107,3 +108,4 @@ else{
     </div>
   );
 }
+export default withRouter(EditProfile)

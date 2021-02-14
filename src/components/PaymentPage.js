@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { withRouter } from 'react-router-dom'
 import EachLine from './EachLine'
 import FormPayment from './FormPayment'
 import NavBar from './NavBar'
 
-export default function PaymentPage(props) {
+function PaymentPage(props) {
     console.log(props.LastOrder)
     let [total,setTotal]= useState(0)
     return (
@@ -15,8 +16,9 @@ export default function PaymentPage(props) {
                     return  <EachLine type="PaymentPage" e={e}/>
                   })
               }
-              <h1>total Order : {total}$</h1>
+              <h1 style={{color:"white"}}>total Order : {total}$</h1>
               <FormPayment />
         </div>
     )
 }
+export default withRouter(PaymentPage)

@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
 import '../cssFile/EachListItem.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
-export default function EachListItem(props) {
+ function EachListItem(props) {
 
  function changeIt(){
   props.setItemToMain(props.Item,props.path);
@@ -25,3 +25,4 @@ function AddToCart(){
 
   );
 }
+export default withRouter(EachListItem)

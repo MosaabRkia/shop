@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import NavBar from './NavBar'
 import '../cssFile/ItemPage.css'
+import { withRouter } from 'react-router-dom';
 
-export default function ItemPage(props) {
+ function ItemPage(props) {
     const [added,setAdded] = useState(false);
     const [addedWish,setAddedWish] = useState(false);
 
@@ -25,15 +26,15 @@ props.wishListArray.map(e=>{
        }
 
     return (
-        <div>
+        <div id="ItemPageDiv">
             <NavBar  Page="ItemPage"/>
         <img id="itemPhoto" src={props.itemInUse.imgsrc}/>
         <h1 id="itemTittle">{props.itemInUse.title}</h1>
         <h4 id="itemPrice">Price : {props.itemInUse.price}$</h4>
-        {added?<button disabled>Added !</button>:<button  onClick={AddToCart}>Add To Cart</button>}
-        {addedWish?<button disabled >Added to Wish List!</button>:<button  onClick={AddToWishList}>Add To Wish List</button>}
+        {added?<button className="btn btn-danger" disabled>Added !</button>:<button className="btn btn-success"  onClick={AddToCart}>Add To Cart</button>}<br/><br/>
+        {addedWish?<button className="btn btn-danger" disabled >Added to Wish List!</button>:<button className="btn btn-success"  onClick={AddToWishList}>Add To Wish List</button>}
         <h4 id="itemDescription">{props.itemInUse.descrption}</h4>
         </div>
     )
 }
-/**pathBack */
+export default withRouter(ItemPage)

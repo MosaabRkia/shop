@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import '../cssFile/CatalogItem.css'
 
-export default function CatalogItem(props) {
+ function CatalogItem(props) {
     return (
         <Link to={props.ToLink}>
         <div  id="eachDivCatalog">
@@ -12,3 +12,4 @@ export default function CatalogItem(props) {
         </Link>
     )
 }
+export default withRouter(CatalogItem)

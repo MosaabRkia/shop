@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import LoginPage from "./components/LoginPage";
 import MainPageAfterLogin from "./components/MainPageAfterLogin";
 import RegisterPage from "./components/RegisterPage";
@@ -20,7 +20,7 @@ import SucessfullyPageOrdered from "./components/SucessfullyPageOrdered";
 import PageSucessfullySentContact from "./components/PageSucessfullySentContact";
 import AdminPage from "./components/AdminPage";
 
-export default function App() {
+function App() {
   const [itemInUse, setItemInUse] = useState(null);
   const [Users , setUsers] = useState([{/*User:this.state.idUser,*/firstName:'Admin',lastName:'Admin',email:'Admin@Admin.Admin',password:'Admin',conPassword:'Admin',kind:"Admin"}]);
   const [allItems , setAllItems] = useState(ItemShopArr);
@@ -261,3 +261,4 @@ setCartArray(temp);
     </div>
   );
 }
+export default withRouter(App)

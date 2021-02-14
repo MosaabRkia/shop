@@ -1,4 +1,4 @@
-import React,{Component, useEffect, useState} from "react";
+import React,{useEffect, useState} from "react";
 import { useHistory, withRouter } from "react-router-dom";
 import EachLine from "./EachLine";
 import NavBar from "./NavBar";
@@ -22,6 +22,7 @@ import NavBar from "./NavBar";
     let newArrCart = cartArr.filter(e=>{ return e.id !== parseInt(e1)})
    props.removeFromCart(toRemove,newArrCart);
    setCartArr(newArrCart)
+
 //render total
    let temp=0;
     newArrCart.map((e) => {
@@ -31,7 +32,6 @@ import NavBar from "./NavBar";
   }
 
     function ChangeQuantity(id,quantity){
-    console.log(id + " " + quantity)
      props.ChangeQuantity(id,quantity);
     setCartArr(props.cartArray)
     cartArr.forEach(e=>{
@@ -50,13 +50,11 @@ import NavBar from "./NavBar";
 function PayAll(){
 //AddOrderPlaced
   let newOrder = cartArr;
-  console.log(newOrder);
   props.AddOrderPlaced(cartArr)
   props.resetCart(cartArr);
   setCartArr([])
   setTotal(0)
   history.push("/PaymentPage", { from: this })
-  //props.history.push('/');
 }
 
 
@@ -69,7 +67,7 @@ function PayAll(){
               return <EachLine ChangeQuantity={ChangeQuantity} e={e} RemoveOne={RemoveOne} /> ;
             })     
         }
-      <h1>  Total : {total}$</h1>
+      <h1 style={{color:'white'}}>  Total : {total}$</h1>
       </ul>
       <div onClick={PayAll} style={{textAlign:"center", display:total!==0?"block":"none"}}> <button className="btn btn-primary">Pay All</button></div>
      

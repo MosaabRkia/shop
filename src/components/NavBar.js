@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../cssFile/NavBar.css";
 import NavBarList from "./NavBarList";
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useHistory, withRouter } from 'react-router-dom'
 
-export default function NavBar(props) {
+ function NavBar(props) {
   const [ShowHide, setShowHide] = useState(false);
 //const [nameOfTheState,setNameOfTheState] = useState(firstValue);
 let history = useHistory();
@@ -162,3 +162,4 @@ switch (props.Page) {
 }
   
 }
+export default withRouter(NavBar)

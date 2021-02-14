@@ -6,9 +6,10 @@ import NavBar from "./NavBar";
 import "../cssFile/MainPageAfterLogin.css";
 import { Animated } from "react-animated-css";
 import AllArrayOfShopsCatalog from "./Arrays/ItemsPagesArr";
+import { withRouter } from "react-router-dom";
 
 
-export default class MainPageAfterLogin extends Component {
+class MainPageAfterLogin extends Component {
   constructor(props) {
     super(props);
   }
@@ -43,3 +44,4 @@ export default class MainPageAfterLogin extends Component {
   }
 }
 
+export default withRouter(MainPageAfterLogin)

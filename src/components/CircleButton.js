@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import '../cssFile/CircleButton.css'
-export default function CircleButton(props) {
+ function CircleButton(props) {
     return (
         <div>
             <Link to={props.toLink}>
@@ -13,3 +13,4 @@ export default function CircleButton(props) {
         </div>
     )
 }
+export default withRouter(CircleButton)

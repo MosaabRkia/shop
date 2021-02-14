@@ -3,6 +3,7 @@
     border-left: none;
     border-right: none;
     border:2px solid black;
+    width: 100%;
 }
 #cartButton,#ListShow{
     width:50px;

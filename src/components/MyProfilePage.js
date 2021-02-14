@@ -1,10 +1,11 @@
-import React,{useState} from 'react'
+import React from 'react'
 import NavBar from './NavBar'
 import '../cssFile/MyProfilePage.css'
 import CircleButton from './CircleButton'
+import { withRouter } from 'react-router-dom'
 
 
-export default function MyProfilePage(props) {
+ function MyProfilePage(props) {
   let usr = JSON.parse(localStorage.getItem('User'))
     return (<div>
         <NavBar Page="MyProfilePage" toLink="/MainPage"/>
@@ -56,3 +57,4 @@ backgroundColor="black"
 </div>
     )
 }
+export default withRouter(MyProfilePage)

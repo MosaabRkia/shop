@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import { withRouter } from 'react-router-dom'
 import EachLine from './EachLine'
 import NavBar from './NavBar'
 
-export default function WishList(props) {
+ function WishList(props) {
     const [arrayWishList,setArrayWishList] = useState(props.wishListArray) 
     function AddToCartWishList(e){
         console.log("arrived")
@@ -36,3 +37,4 @@ export default function WishList(props) {
         </div>
     )
 }
+export default withRouter(WishList)

@@ -1,9 +1,9 @@
 import React from "react";
 import '../cssFile/NavBarList.css'
 import {Animated} from "react-animated-css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-export default function NavBarList(props) {
+ function NavBarList(props) {
  switch (props.Page) {
    case "MyProfilePage":
     return (
@@ -62,3 +62,4 @@ export default function NavBarList(props) {
      break;
  }
 }
+export default withRouter(NavBarList)

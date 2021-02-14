@@ -4,7 +4,9 @@
     width: 90%;
     border-radius: 40px;
 }
-
+#ItemPageDiv{
+    color:white;
+}
 #itemTittle{
     border: solid 1px black;
     font-size: calc(1.375rem + 1.5vw);

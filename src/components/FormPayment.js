@@ -1,71 +1,60 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import '../cssFile/FormPayment.css'
-import PaymentPage from './PaymentPage'
 
 function FormPayment(props) {
 
 
     return (
         <div>     
-<div class="row">
-  <div class="col-75">
-    <div class="container1">
+<div className="row">
+  <div className="col-75">
+    <div className="container1">
       <form >
       
-        <div class="row">
-          <div class="col-50">
-            <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe"/>
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com"/>
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"/>
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York"/>
+        <div className="row">
+          <div className="col-50">
+            <h3 style={{color:"white"}}>Billing Address</h3><br/><br/>
+            <label ></label>
+            <input type="text" id="fname" name="firstname" placeholder="First Name"/><br/>
+            <input type="text" id="email" name="email" placeholder="Email"/><br/>
+            <input type="text" id="adr" name="address" placeholder="Address"/><br/>
+            <input type="text" id="city" name="city" placeholder="City"/><br/>
 
-            <div class="row">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY"/>
+            <div className="row">
+              <div className="col-50">
+                <input type="text" id="state" name="state" placeholder="State"/>
               </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001"/>
+              <div className="col-50">
+                <input type="text" id="zip" name="zip" placeholder="Zip"/>
               </div>
             </div>
           </div>
 
-          <div class="col-50">
-            <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container1">
-              <i class="fa fa-cc-visa" style={{color:"navy"}}></i>
-              <i class="fa fa-cc-amex" style={{color:"blue"}}></i>
-              <i class="fa fa-cc-mastercard" style={{color:"red"}}></i>
-              <i class="fa fa-cc-discover" style={{color:"orange"}}></i>
+          <div className="col-50">
+            <h3 style={{color:"white"}}>Payment</h3>
+            <label style={{color:"white"}}>Accepted Cards</label>
+            <div className="icon-container1">
+              <i className="fa fa-cc-visa" style={{color:"navy"}}></i>
+              <i className="fa fa-cc-amex" style={{color:"blue"}}></i>
+              <i className="fa fa-cc-mastercard" style={{color:"red"}}></i>
+              <i className="fa fa-cc-discover" style={{color:"orange"}}></i><br/><br/>
             </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe"/>
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"/>
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September"/>
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018"/>
+            <input type="text" id="cname" name="cardname" placeholder="Name on Card"/><br/>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Credit card number"/><br/>
+            <input type="text" id="expmonth" name="expmonth" placeholder="Exp Month"/><br/>
+            <div className="row">
+              <div className="col-50">
+                <input type="text" id="expyear" name="expyear" placeholder="Exp Year"/>
               </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352"/>
+              <div className="col-50">
+                <input type="text" id="cvv" name="cvv" placeholder="CVV"/>
               </div>
             </div>
           </div>
           
         </div>
-       <Link to="/SucessfullyPageOrdered"> <input type="submit" value="Continue to checkout" class="btn"/></Link>
+       <Link to="/SucessfullyPageOrdered"> <input style={{background:"white",margin:"5%"}} value="Place Order" className="btn"/></Link>
       </form>
     </div>
   </div>

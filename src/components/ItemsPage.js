@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router-dom";
 import EachListItem from "./EachListItem";
 import NavBar from "./NavBar";
 
-export default function ItemsPage(props) {
+function ItemsPage(props) {
   const [catalogList, setCatalogList] = useState([]);
 
 
@@ -32,17 +33,27 @@ export default function ItemsPage(props) {
   
     props.AddToCart(ToAddInCart,NewList);
   }
-  function SortIt(){
+  function SortItLowToHigh(){
    catalogList.sort( (a, b)=> {
       return a.price - b.price;
     });
     setCatalogList(catalogList)
+    console.log(catalogList)
   }
+
+  function SortItHighToLow(){
+    catalogList.sort( (a, b)=> {
+       return a.price - b.price;
+     });
+     setCatalogList(catalogList)
+     console.log(catalogList)
+   }
 
   return (
     <div>
       <NavBar Page="ItemsPage" toLink="/MainPage" />
-<button onClick={SortIt}>Sort By Price</button>
+<button className="btn btn-primary" onClick={SortItLowToHigh}>Sort By Price Low To High</button>
+<button className="btn btn-primary" onClick={SortItHighToLow}>Sort By Price High To Low</button>
       <ul key="list">
         {catalogList.map((e) => {
           return (
@@ -59,3 +70,4 @@ export default function ItemsPage(props) {
   );
 }
 
+export default withRouter(ItemsPage)

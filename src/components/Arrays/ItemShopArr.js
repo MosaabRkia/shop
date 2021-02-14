@@ -13,7 +13,7 @@ const ItemShop = [
         type: "CardGraphic"
         , imgsrc: "https://c1.neweggimages.com/ProductImageCompressAll1280/14-150-803-Z03.jpg"
         , title: "XFX Radeon RX 580 DirectX"
-        , price: "477"
+        , price: 477
         ,quantity:1
         , descrption: "8GB - 256-Bit - GDDR5 Core Clock True: 1366 MHz  OC+: 1386 MHz  -  1 x DL-DVI-D 1 x HDMI 2.0b 3 x DisplayPort 1.4  -  2304 Stream Processor  -  PCI Express 3.0  -  3 Years with Registration at XFX"
     }
@@ -932,7 +932,7 @@ const ItemShop = [
     {
         id:202,
         type: "Case"
-        , imgsrc: "Corsair - Carbide Series SPEC-DELTA"
+        , imgsrc: "https://nexusit.org/wp-content/uploads/2020/07/d21f61c6-5257-455e-bebf-946ae2dbc754.__CR3084291231762_PT0_SX970_V1___.jpg"
         , title: "RGB Tempered Glass Mid-Tower ATX Gaming Case - Black"
         , price: 94.99
         ,quantity:1

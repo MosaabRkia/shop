@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import "../cssFile/EachLine.css";
-export default function EachLine(props) {
+ function EachLine(props) {
 
   const [quantityLess,setQunatityLess] = useState();
 function AddToCartWishList(){
@@ -64,7 +65,7 @@ props.RemoveOne(e.target.id);
         <p id="orderIdText"> Id Item : {props.e.id}</p>
         <p>quantity : {props.e.quantity}</p>
         <p id="orderPriceText">Price : {props.e.price}$</p>
-        <input id={`IdQuantity${props.e.id}`} type="number" value={quantityLess} onChange={noLessThan}/><br/>
+        <input placeholder="Quantity" style={{width:"70%",marginBottom:"5%"}} id={`IdQuantity${props.e.id}`} type="number" value={quantityLess} onChange={noLessThan}/><br/>
         <button id={props.e.id} onClick={RemoveBar} className="btn btn-danger">Remove</button>
       </div>
     </li>
@@ -72,3 +73,4 @@ props.RemoveOne(e.target.id);
     }
     
 }
+export default withRouter(EachLine)

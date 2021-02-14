@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../cssFile/LoginPage.css'
 import {Animated} from "react-animated-css";
 import { Link, withRouter } from 'react-router-dom';
@@ -7,7 +7,6 @@ function LoginPage(props) {
     const [message,setMessege] = useState("")
     const [loginEmail,setLoginEmail] = useState()
     const [loginPassword,setLoginPassword] = useState()
-    const [saveLogin,setSaveLogin] = useState()
     
 
 
@@ -25,11 +24,7 @@ useEffect(() => {
         console.log("joined")
         props.Users.map(e=>{
             if(e.email === loginEmail && e.password===loginPassword){
-if(saveLogin === true){
-localStorage.setItem('saveLogin',true);
-}
 localStorage.setItem("User",JSON.stringify(e));
-console.log(saveLogin)
 
 if(e.kind === "Admin"){
   props.history.push("/AdminPage");
@@ -49,9 +44,6 @@ setMessege('Ops Something Wrong Try Again');
    setLoginPassword(e.target.value);
  };
 
-  function onChangeHandleSaveLogin(e){
-   setSaveLogin(e.target.checked);
-  }
 
         return (
             <div>
@@ -67,8 +59,6 @@ setMessege('Ops Something Wrong Try Again');
                <p id="typeForInput" >Password</p>
                <input name="loginPassword" onChange={onChangeHandlePassword} className="loginInput" id="loginInputPassword" type="password" placeholder="Enter Password" required/>
                 </div>
-
-               <div id="savePasswordInput"><input name="saveLogin" onChange={onChangeHandleSaveLogin}  type="checkbox" name="savePassword" />  save your password </div>
                {message}
              <div id="buttonLoginDiv"><input id="ButtonLogin" type="submit" value="Login" /></div>
              </form>

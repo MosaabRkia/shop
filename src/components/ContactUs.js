@@ -51,7 +51,7 @@ class ContactUs extends Component {
         </div>
         <div>
           <div class="form-group">
-            <label for="sel1">Select list (select one):</label>
+            <label id="tittleselect" for="sel1">Select list (select one):</label>
             <select onChange={this.ShowBar} class="form-control" id="sel1">
               <option value="Scamming">Scamming</option>
               <option value="Failed">Failed Payment</option>
@@ -68,11 +68,13 @@ class ContactUs extends Component {
             />
 
             <br />
-            <label for="comment"> Explain your Problem: </label>
+            <label id="tittleselect" for="comment"> Explain your Problem: </label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
         </div>
+        <div id="buttonContact">
         <button className="btn btn-danger" onClick={this.GoToPageSucessfully}>Submit</button>
+        </div>
       </div>
     );
   }
